@@ -1,0 +1,131 @@
+/* Color and Spacing Variables for a Light Theme */
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #06b6d4;
+    --dark-text: #334155;
+    --light-text: #64748b;
+    --card-bg: white;
+    --page-bg: #f1f5f9;
+    --border-radius-card: 16px;
+    --box-shadow-card: 0 10px 30px rgba(0,0,0,0.08);
+    --gradient-btn: linear-gradient(135deg, #3b82f6, #06b6d4);
+    --section-padding: 48px;
+}
+
+/* Base styles for the updates page to maintain consistency */
+body {
+    font-family: 'Inter', sans-serif; /* Assumes Inter font is linked */
+    background-color: var(--page-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+/* Updates Title Section, styled as a Hero section for a large, prominent title */
+.updates-title {
+    background: var(--gradient-btn);
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    color: white;
+    margin-bottom: 2.5rem; /* Add consistent spacing below */
+}
+
+.updates-title h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.updates-title p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+/* Updates Cards Section */
+.updates-cards {
+    display: grid;
+    gap: 2.5rem;
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+}
+
+.update-card {
+    background-color: var(--card-bg);
+    padding: var(--section-padding);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-card);
+    transition: transform 0.3s ease;
+}
+
+.update-card:hover {
+    transform: translateY(-5px);
+}
+
+.update-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 1rem;
+}
+
+.update-card p strong {
+    font-size: 1rem;
+    color: var(--dark-text);
+}
+
+.update-card ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.update-card li {
+    font-size: 1rem;
+    color: var(--dark-text);
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Updates Footer Section (Card-like) */
+.updates-footer {
+    background-color: var(--card-bg);
+    padding: var(--section-padding);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-card);
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.updates-footer h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 1.5rem;
+}
+
+.updates-footer p {
+    color: var(--light-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .updates-cards, .updates-footer {
+        padding: 24px;
+        margin: 0 16px 2rem;
+    }
+}

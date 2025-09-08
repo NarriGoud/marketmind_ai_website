@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs AI</title>
+    <!-- Favicon / Tab Logo -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/docs.css">
+    <link rel="stylesheet" href="assets/css/telegram_docs.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3l18 18M22 12l-4-4-2 2"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">MarketMind AI</span>
+                </div>
+
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="updates.html" class="nav-link">Updates</a>
+                    <a href="docs.html" class="nav-link">Docs</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="btn btn-ghost">Sign In</button>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <button class="mobile-menu-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="docs-search-input" placeholder="Search documentation...">
+        <button id="docs-search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+    </div>
+
+    <div class="docs-container">
+        <aside id="docs-sidebar">
+            <div class="sidebar-header">
+                <h3>Contents</h3>
+                <button class="dropdown-toggle" id="sidebar-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <ul>
+                    <li><a href="assets/docs/introduction.html" id="introduction-link">Introduction</a></li>
+                    <li><a href="assets/docs/get_started.html">Getting Started</a></li>
+                    <li><a href="assets/docs/telegram.html">Telegram Bot Integration</a></li>
+                    <li><a href="assets/docs/external_chatbot.html">External Website Chatbot</a></li>
+                    <li><a href="assets/docs/faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Docs Content Area (New Sections) -->
+        <main class="docs-content">
+            <section id="telegram-bot">
+                <h2>Telegram Bot Integration</h2>
+                <p>Details on how to set up the MarketMind AI Telegram bot for instant market updates and analysis directly in your messaging app.</p>
+            </section>
+            <section id="external-chatbot" style="display:none;">
+                <h2>External Website Chatbot</h2>
+                <p>Instructions for embedding the MarketMind AI chatbot on your website to provide real-time financial insights to your visitors.</p>
+            </section>
+            <section id="getting-started" style="display:none;">
+                <h2>Getting Started</h2>
+                <p>A step-by-step guide to setting up your MarketMind AI account and accessing key features.</p>
+            </section>
+            <section id="customization" style="display:none;">
+                <h2>Customization & Templates</h2>
+                <p>Learn how to customize the AI's response templates and integrate it into your existing financial models.</p>
+            </section>
+            <section id="admin-api" style="display:none;">
+                <h2>Admin API</h2>
+                <p>Documentation for the Admin API, allowing you to manage users, track usage, and monitor performance programmatically.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3l18 18M22 12l-4-4-2 2"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">MarketMind AI</span>
+                    </div>
+                    <p>Your self-learning AI financial assistant. Combining retrieval, forecasts, and risk analysis to redefine how traders and investors make decisions.</p>
+                    <div class="social-links">
+                        <!-- same icons -->
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="updates.html">Updates</a>
+                        <a href="docs.html">Documentation</a>
+                        <a href="integration.html">Integrations</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="press.html">Press</a>
+                        <a href="partners.html">Partners</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe for the latest AI-driven market insights and feature updates.</p>
+                        <div class="newsletter">
+                            <input type="email" placeholder="Enter your email">
+                            <button class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 MarketMind AI. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/marketmind_chatbot.js"></script>
+    <script src="assets/js/docs.js"></script>
+</body>
+</html>

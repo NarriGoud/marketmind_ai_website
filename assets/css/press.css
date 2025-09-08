@@ -1,0 +1,110 @@
+/* Color and Spacing Variables for a Light Theme */
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #06b6d4;
+    --dark-text: #334155;
+    --light-text: #64748b;
+    --card-bg: white;
+    --page-bg: #f1f5f9;
+    --border-radius-card: 16px;
+    --box-shadow-card: 0 10px 30px rgba(0,0,0,0.08);
+    --gradient-btn: linear-gradient(135deg, #3b82f6, #06b6d4);
+    --section-padding: 48px;
+}
+
+/* Base styles for the press page to maintain consistency with the about page */
+body {
+    font-family: 'Inter', sans-serif; /* Assumes Inter font is linked */
+    background-color: var(--page-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+/* Press Title Section (Hero-like) */
+.press-title {
+    background: var(--gradient-btn);
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    color: white;
+}
+
+.press-title h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.press-title p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+/* Press Header & Footer Sections (Card-like) */
+.press-header, .press-footer {
+    background-color: var(--card-bg);
+    padding: var(--section-padding);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-card);
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.press-header h2, .press-footer h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 1.5rem;
+}
+
+.press-header p, .press-footer p {
+    color: var(--light-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Press Card Section */
+.press-cards {
+    display: grid;
+    gap: 2.5rem;
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+}
+
+.press-card {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-card);
+    text-align: center;
+}
+
+.press-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.press-card p {
+    color: var(--light-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .press-header, .press-footer, .press-cards {
+        padding: 24px;
+        margin: 0 16px 2rem;
+    }
+}

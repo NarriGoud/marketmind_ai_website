@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketMind AI</title>
+    <meta name="description" content="MarketMind AI is a self-learning financial assistant powered by AI, combining RAG, predictive models, and automated insights to help you stay ahead of the market.">
+    <meta name="keywords" content="AI trading, stock forecasts, RAG, financial AI, LSTM, trading assistant, market insights">
+    <meta name="author" content="MarketMind AI">
+
+    <meta property="og:title" content="MarketMind AI - The Mind Behind Market">
+    <meta property="og:description" content="Self-learning AI assistant for smarter investing with predictive models and real-time market intelligence">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon / Tab Logo -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3l18 18M22 12l-4-4-2 2"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">MarketMind AI</span>
+                </div>
+
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="updates.html" class="nav-link">Updates</a>
+                    <a href="docs.html" class="nav-link">Docs</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="btn btn-ghost">Sign In</button>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <button class="mobile-menu-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                    </svg>
+                    Self-Learning Financial AI
+                </div>
+
+                <h1 class="hero-title">
+                    The Mind Behind <span class="highlight">Market</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    AI that learns from news, forecasts, and user feedback to deliver personalized financial intelligence
+                </p>
+
+                <p class="hero-description">
+                    MarketMind AI integrates real-time news analysis, predictive LSTM models, and RAG-powered research 
+                    to give you smarter trading decisions that continuously improve over time.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="btn btn-hero-primary">
+                        Start Smarter Investing
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-hero-secondary">See How It Works</button>
+                </div>
+
+                <div class="hero-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.51 2.51 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+                                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.51 2.51 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+                            </svg>
+                        </div>
+                        <h3>RAG Insights</h3>
+                        <p>Retrieval-augmented generation delivers context-aware market intelligence</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18M7 16l4-4 4 4 6-6"/>
+                            </svg>
+                        </div>
+                        <h3>LSTM Forecasts</h3>
+                        <p>Deep learning time-series models predict market trends and stock movements</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                            </svg>
+                        </div>
+                        <h3>Feedback Loop</h3>
+                        <p>Self-learning system improves continuously from user feedback and results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" ...></svg>
+                        </div>
+                        <span class="logo-text">MarketMind AI</span>
+                    </div>
+                    <p>Your self-learning AI financial assistant. Combining retrieval, forecasts, and risk analysis to redefine how traders and investors make decisions.</p>
+                    <div class="social-links">
+                        <!-- same icons -->
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="updates.html">Updates</a>
+                        <a href="docs.html">Documentation</a>
+                        <a href="integration.html">Integrations</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="press.html">Press</a>
+                        <a href="partners.html">Partners</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe for the latest AI-driven market insights and feature updates.</p>
+                        <div class="newsletter">
+                            <input id="email" placeholder="Enter your email">
+                            <button class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 MarketMind AI. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/marketmind_chatbot.js"></script>
+</body>
+</html>

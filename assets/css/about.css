@@ -1,0 +1,144 @@
+/* Complete CSS for the About Page */
+/* This stylesheet provides a cohesive design based on the provided contact.css file. */
+
+/* Color and Spacing Variables for a Light Theme */
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #06b6d4;
+    --dark-text: #334155;
+    --light-text: #64748b;
+    --card-bg: white;
+    --page-bg: #f1f5f9;
+    --border-radius-card: 16px;
+    --box-shadow-card: 0 10px 30px rgba(0,0,0,0.08);
+    --gradient-btn: linear-gradient(135deg, #3b82f6, #06b6d4);
+    --section-padding: 48px;
+  }
+  
+  /* Hero Section Styles */
+  #hero {
+    background: var(--gradient-btn);
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    color: white;
+  }
+  
+  #hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  #hero p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    opacity: 0.9;
+    max-width: 800px;
+  }
+  
+  /* General Section and Card-like Styling */
+  section:not(#hero) {
+    background-color: var(--card-bg);
+    padding: var(--section-padding);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-card);
+    max-width: 960px;
+    margin: 0 auto 2.5rem;
+    box-sizing: border-box;
+  }
+  
+  /* Heading Styles */
+  section:not(#hero) h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Paragraphs within sections */
+  section:not(#hero) p {
+    color: var(--light-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+  }
+  
+  /* List Styling */
+  section:not(#hero) ul,
+  section:not(#hero) ol {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  
+  section:not(#hero) li {
+    font-size: 1rem;
+    color: var(--dark-text);
+    padding: 12px;
+    border-left: 4px solid var(--primary-color);
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  section:not(#hero) li:hover {
+    background-color: #f1f2f3;
+  }
+  
+  section:not(#hero) li strong {
+    color: var(--dark-text);
+    font-weight: 600;
+  }
+  
+  /* Call-to-Action (CTA) Button Container */
+  #closing {
+    text-align: center;
+  }
+  
+  #closing a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    color: white;
+    background: var(--gradient-btn);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin: 0.5rem; /* Adds gap around each button */
+  }
+  
+  #closing a:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  
+  /* Specific Section Layouts */
+  #pipeline ol {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  #features ul,
+  #who-for ul,
+  #why ul,
+  #use-cases ul,
+  #model-choice ul {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* Basic mobile responsiveness */
+  @media (max-width: 768px) {
+    section:not(#hero) {
+      padding: 24px;
+      margin: 0 16px 2rem;
+    }
+  }

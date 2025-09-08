@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- Favicon / Tab Logo -->
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3l18 18M22 12l-4-4-2 2"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">MarketMind AI</span>
+                </div>
+
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="updates.html" class="nav-link">Updates</a>
+                    <a href="docs.html" class="nav-link">Docs</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="nav-actions">
+                    <button class="btn btn-ghost">Sign In</button>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <button class="mobile-menu-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>About MarketMind AI</h1>
+        <p>The Mind Behind Market — a self-learning financial AI designed to empower traders, investors, and researchers with real-time insights, forecasts, and decision support.</p>
+    </section>
+    
+    <!-- Pipeline Section -->
+    <section id="pipeline">
+        <h2>Our Pipeline</h2>
+        <ol>
+        <li><strong>Data Collection:</strong> Financial news, SEC filings, earnings calls, stock tickers, and time-series market data.</li>
+        <li><strong>Ingestion & Storage:</strong> Raw articles and structured data stored in MongoDB with preprocessing for quality.</li>
+        <li><strong>Retrieval-Augmented Generation (RAG):</strong> FAISS-based vector search for context-aware answers.</li>
+        <li><strong>Modeling:</strong> LSTM models for time-series forecasts and Mistral-7B + LoRA adapters for reasoning.</li>
+        <li><strong>Delivery:</strong> Telegram bot, embedded chatbot, APIs, and dashboards for user-friendly interaction.</li>
+        <li><strong>Feedback Loop:</strong> User feedback fine-tunes the system for continuous improvement.</li>
+        </ol>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Key Features</h2>
+        <ul>
+        <li>⚡ <strong>Real-Time RAG:</strong> Contextual answers from news & reports.</li>
+        <li>📈 <strong>Time-Series Forecasts:</strong> Predictive models for Indian & US markets.</li>
+        <li>🤖 <strong>AI Chatbot:</strong> Telegram & website integration for instant insights.</li>
+        <li>🛠️ <strong>Customizable Alerts:</strong> Watchlist monitoring and risk analytics.</li>
+        <li>💬 <strong>Feedback-Driven Learning:</strong> Self-improving system based on user interactions.</li>
+        <li>🔒 <strong>Secure & Private:</strong> User data and queries remain confidential.</li>
+        </ul>
+    </section>
+    
+    <!-- Who is it for Section -->
+    <section id="who-for">
+        <h2>Who is it For?</h2>
+        <p>MarketMind AI is designed for:</p>
+        <ul>
+        <li>Professional traders and investors seeking timely market insights.</li>
+        <li>Financial analysts needing aggregated news and automated summaries.</li>
+        <li>Developers integrating intelligent trading tools into dashboards or apps.</li>
+        <li>Anyone interested in AI-assisted decision-making for financial markets.</li>
+        </ul>
+    </section>
+    
+    <!-- Why MarketMind AI Section -->
+    <section id="why">
+        <h2>Why MarketMind AI?</h2>
+        <p>Our AI stands out because:</p>
+        <ul>
+        <li>Combines LLM reasoning with structured time-series forecasting.</li>
+        <li>Continuously improves using user feedback and automated learning loops.</li>
+        <li>Supports multiple platforms — Telegram, web, and APIs.</li>
+        <li>Empowers users to make informed decisions faster.</li>
+        </ul>
+    </section>
+    
+    <!-- Use Cases Section -->
+    <section id="use-cases">
+        <h2>What You Can Do With It</h2>
+        <ul>
+        <li>Get contextual answers to financial queries instantly.</li>
+        <li>Receive predictive stock price trends and risk analysis.</li>
+        <li>Integrate with your dashboard or embed the chatbot on your site.</li>
+        <li>Set alerts for specific stocks or market conditions.</li>
+        <li>Analyze news sentiment and summaries automatically.</li>
+        </ul>
+    </section>
+    
+    <!-- Why This Model Section -->
+    <section id="model-choice">
+        <h2>Why This Model?</h2>
+        <p>We chose Mistral-7B with LoRA adapters because it balances strong reasoning capabilities with efficient resource usage. This allows MarketMind AI to:</p>
+        <ul>
+        <li>Process large volumes of financial data quickly.</li>
+        <li>Provide accurate, context-aware responses.</li>
+        <li>Support fine-tuning for domain-specific improvements.</li>
+        </ul>
+    </section>
+    
+    <!-- Closing / CTA Section -->
+    <section id="closing">
+        <h2>Get Started with MarketMind AI</h2>
+        <p>Whether you're a trader, analyst, or developer, MarketMind AI is designed to augment your financial decision-making. Explore the docs, integrate the bot, or start monitoring your favorite stocks today.</p>
+        <a href="#">Go To Telegram</a>
+        <a href="docs.html">View Documentation</a>
+    </section>    
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="24" height="24" ...></svg>
+                        </div>
+                        <span class="logo-text">MarketMind AI</span>
+                    </div>
+                    <p>Your self-learning AI financial assistant. Combining retrieval, forecasts, and risk analysis to redefine how traders and investors make decisions.</p>
+                    <div class="social-links">
+                        <!-- same icons -->
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="updates.html">Updates</a>
+                        <a href="docs.html">Documentation</a>
+                        <a href="integration.html">Integrations</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="press.html">Press</a>
+                        <a href="partners.html">Partners</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe for the latest AI-driven market insights and feature updates.</p>
+                        <div class="newsletter">
+                            <input type="email" placeholder="Enter your email">
+                            <button class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 MarketMind AI. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/marketmind_chatbot.js"></script>
+</body>
+</html>

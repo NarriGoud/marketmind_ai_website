@@ -1,0 +1,157 @@
+/* Styling for the injected documentation content */
+.docs-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.docs-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.docs-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.docs-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--link-color);
+    margin-bottom: 15px;
+}
+
+.docs-content ul, .docs-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.docs-content ul li {
+    line-height: 1.6;
+    color: var(--link-color);
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+.docs-content hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0;
+}
+
+/* Table styling for a clean, modern look */
+.docs-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.docs-content th, .docs-content td {
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.docs-content th {
+    background-color: var(--hover-bg);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.docs-content tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+/* Style for `code` blocks */
+.docs-content code {
+    background-color: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(6, 182, 212, 0.85));
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-image 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-image: linear-gradient(135deg, rgba(6, 182, 212, 1), rgba(59, 130, 246, 1)); /* Increase opacity on hover */
+    transform: translateY(-2px); /* A slight lift effect */
+}
+
+.feedback-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensure the wrapper spans the full width of its parent */
+    margin-top: 50px;
+}
+
+.feedback-container-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feedback-question {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
+    margin: 0;
+}
+
+.feedback-buttons-inline {
+    display: flex;
+    gap: 10px;
+}
+
+.feedback-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f7fafc;
+    color: #4a5568;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.feedback-btn:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
