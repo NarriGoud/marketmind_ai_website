@@ -27,7 +27,7 @@
         <div class="chat">
           <div class="chat-title">
             <div class="chat-title-logo">
-              <img src="favicon.png" alt="MarketMind AI Logo" />
+              <img src="assets/images/dark_logo.svg" alt="MarketMind AI Logo" />
             </div>
             <h1>MarketMind AI</h1>
             <h2>The Mind Behind Market</h2>

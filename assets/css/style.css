@@ -37,21 +37,25 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 2px;
     font-weight: 700;
     font-size: 20px;
     color: #1e293b;
 }
 
 .logo-icon {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    color: white;
-    width: 40px;
-    height: 40px;
+    width: 40px;   /* original size */
+    height: 40px;  /* original size */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: none;  /* remove gradient background */
+}
+
+.logo-icon img {
+    width: 30px;   /* original SVG size */
+    height: 30px;
 }
 
 .nav-menu {
