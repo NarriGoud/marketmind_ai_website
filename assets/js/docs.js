@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-initialize listeners for the dynamically loaded content
             initializeFeedback();
             updateTelegramLink();
-            setupDocLinks(); // ✅ re-bind links inside newly loaded content
+            setupDocLinks(); // ✅ CRITICAL: Re-bind links after content load
 
             // Reset the search input and filter when new content is loaded
             if (searchInput) {
@@ -59,17 +59,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ✅ Add click event listeners to ALL internal doc links (sidebar + FAQ + anywhere else)
+    // ✅ UPDATED: Add touchstart event for mobile reliability in addition to click
     function setupDocLinks() {
         const docLinks = document.querySelectorAll('a[href^="assets/docs/"]');
         docLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
+            
+            const linkHandler = (event) => {
                 event.preventDefault(); // Stop full page load
                 let url = link.getAttribute('href');
 
                 history.pushState(null, '', `?page=${url}`);
                 loadContent(url);
                 setActiveLink(url);
+                
+                // Close sidebar dropdown after clicking a link on mobile
+                const sidebarNav = document.getElementById('sidebar-nav');
+                const sidebarToggle = document.getElementById('sidebar-toggle');
+                if (sidebarNav && sidebarToggle && window.innerWidth <= 768) {
+                    sidebarNav.classList.remove('active');
+                    sidebarToggle.classList.remove('active');
+                }
+            };
+
+            // Use click for standard desktop/mouse interaction
+            link.addEventListener('click', linkHandler);
+            
+            // Use touchstart for better reliability on native mobile browsers
+            // Ensure the handler only runs once to prevent double-loading
+            link.addEventListener('touchstart', (event) => {
+                 if (event.cancelable) {
+                    // Prevent default touch behavior (like scrolling) before click fires
+                    event.preventDefault(); 
+                 }
+                 // Trigger the link handler logic
+                 linkHandler(event);
             });
         });
     }
@@ -155,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ------------------------------------------------------------------
-    // ✅ NEW CODE: Mobile Sidebar Dropdown Functionality
+    // ✅ FIX 1: Mobile Sidebar Dropdown Functionality
     // ------------------------------------------------------------------
     const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebarNav = document.getElementById('sidebar-nav');
