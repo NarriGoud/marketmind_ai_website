@@ -154,6 +154,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ------------------------------------------------------------------
+    // ✅ NEW CODE: Mobile Sidebar Dropdown Functionality
+    // ------------------------------------------------------------------
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarNav = document.getElementById('sidebar-nav');
+    const sidebarHeader = document.querySelector('.sidebar-header');
+
+    if (sidebarToggle && sidebarNav && sidebarHeader) {
+        // Attach listener to the header for a larger touch target
+        sidebarHeader.addEventListener('click', () => {
+            // Toggles the visibility of the nav links (CSS sets max-height)
+            sidebarNav.classList.toggle('active');
+            
+            // Toggles the rotation of the dropdown icon (CSS sets transform: rotate)
+            sidebarToggle.classList.toggle('active');
+        });
+    }
+    // ------------------------------------------------------------------
+
     // Initial page load state
     const urlParams = new URLSearchParams(window.location.search);
     const initialPage = urlParams.get('page') || 'assets/docs/introduction.html';
