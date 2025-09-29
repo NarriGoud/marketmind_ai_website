@@ -201,6 +201,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }, stepTime);
     }
 
+    document.getElementById('see-how-btn').addEventListener('click', function() {
+        // Navigate to docs.html
+        window.location.href = 'docs.html';
+    });
+
+    function updateStartInvestingLink() {
+        const btn = document.getElementById('start-investing-btn');
+        if (!btn) return;
+
+        const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Open native Telegram app on mobile
+            btn.onclick = () => window.location.href = 'tg://resolve?domain=Local_test_ai_bot';
+        } else {
+            // Open Telegram web on desktop
+            btn.onclick = () => window.open('https://web.telegram.org/k/#@Local_test_ai_bot', '_blank');
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', updateStartInvestingLink);
+
     function formatNumber(num, hasDollar, hasPercent, hasPlus) {
         let formatted = '';
         
