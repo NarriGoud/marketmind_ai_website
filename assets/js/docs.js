@@ -149,14 +149,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const feedbackMessagePlaceholder = document.getElementById('feedback-message-placeholder');
 
         if (feedbackButtonsContainer && feedbackMessagePlaceholder) {
-            feedbackButtonsContainer.addEventListener('click', (event) => {
+            feedbackButtonsContainer.addEventListener('click', async (event) => {
                 const button = event.target;
                 if (button.classList.contains('feedback-btn')) {
+                    const response = button.getAttribute('data-response'); // "yes" or "no"
+                    
+                    // Hide buttons and show thank-you message
                     feedbackButtonsContainer.style.display = 'none';
                     feedbackMessagePlaceholder.textContent = 'Thank you for your feedback!';
                     feedbackMessagePlaceholder.style.fontWeight = 'bold';
                     feedbackMessagePlaceholder.style.color = '#4a5568';
                     feedbackMessagePlaceholder.style.marginLeft = '10px';
+
+                    // Send feedback to FastAPI endpoint
+                    try {
+                        const res = await fetch('https://marketmind-ai-api.onrender.com/api/feedback', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ feedback: response })
+                        });
+
+                        if (!res.ok) {
+                            console.error('Failed to submit feedback:', res.statusText);
+                        } else {
+                            console.log(`Feedback submitted: ${response}`);
+                        }
+                    } catch (err) {
+                        console.error('Error sending feedback:', err);
+                    }
                 }
             });
         }
