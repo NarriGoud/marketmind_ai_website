@@ -147,42 +147,46 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeFeedback() {
         const feedbackButtonsContainer = document.getElementById('feedback-buttons');
         const feedbackMessagePlaceholder = document.getElementById('feedback-message-placeholder');
-
-        if (feedbackButtonsContainer && feedbackMessagePlaceholder) {
-            feedbackButtonsContainer.addEventListener('click', async (event) => {
-                const button = event.target;
-                if (button.classList.contains('feedback-btn')) {
-                    const response = button.getAttribute('data-response'); // "yes" or "no"
-                    
-                    // Hide buttons and show thank-you message
-                    feedbackButtonsContainer.style.display = 'none';
+    
+        if (!feedbackButtonsContainer || !feedbackMessagePlaceholder) return;
+    
+        feedbackButtonsContainer.addEventListener('click', async (event) => {
+            const button = event.target;
+            if (!button.classList.contains('feedback-btn')) return;
+    
+            const responseValue = button.dataset.response;
+            if (!responseValue) return;
+    
+            // Disable buttons after click
+            feedbackButtonsContainer.querySelectorAll('.feedback-btn').forEach(btn => btn.disabled = true);
+    
+            // Show temporary message while sending
+            feedbackMessagePlaceholder.textContent = 'Submitting feedback...';
+            feedbackMessagePlaceholder.style.fontWeight = 'bold';
+            feedbackMessagePlaceholder.style.color = '#4a5568';
+            feedbackMessagePlaceholder.style.marginLeft = '10px';
+    
+            try {
+                const res = await fetch('https://marketmind-ai-api.onrender.com/api/feedback', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ response: responseValue })
+                });
+    
+                if (res.ok) {
                     feedbackMessagePlaceholder.textContent = 'Thank you for your feedback!';
-                    feedbackMessagePlaceholder.style.fontWeight = 'bold';
-                    feedbackMessagePlaceholder.style.color = '#4a5568';
-                    feedbackMessagePlaceholder.style.marginLeft = '10px';
-
-                    // Send feedback to FastAPI endpoint
-                    try {
-                        const res = await fetch('https://marketmind-ai-api.onrender.com/api/feedback', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ feedback: response })
-                        });
-
-                        if (!res.ok) {
-                            console.error('Failed to submit feedback:', res.statusText);
-                        } else {
-                            console.log(`Feedback submitted: ${response}`);
-                        }
-                    } catch (err) {
-                        console.error('Error sending feedback:', err);
-                    }
+                    feedbackMessagePlaceholder.style.color = '#22c55e'; // green
+                } else {
+                    const data = await res.json();
+                    feedbackMessagePlaceholder.textContent = `Error: ${data.detail || res.statusText}`;
+                    feedbackMessagePlaceholder.style.color = '#ef4444'; // red
                 }
-            });
-        }
-    }
+            } catch (err) {
+                feedbackMessagePlaceholder.textContent = `Network error: ${err.message}`;
+                feedbackMessagePlaceholder.style.color = '#ef4444';
+            }
+        });
+    }    
 
     // Function to update the Telegram button's link for mobile users
     function updateTelegramLink() {
