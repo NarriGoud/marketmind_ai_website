@@ -129,21 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Helper: highlight search terms
-    function highlightMatches(query) {
-        // Reset old highlights
-        docsContent.querySelectorAll("mark").forEach(mark => {
-            mark.outerHTML = mark.innerText;
-        });
-
-        const regex = new RegExp(`(${query})`, "gi");
-        docsContent.innerHTML = docsContent.innerHTML.replace(regex, "<mark>$1</mark>");
-    }
-
-    if (searchInput) {
-        searchInput.addEventListener('input', filterContent);
-    }
-
-    // Function to initialize feedback listeners for dynamically loaded content
     function initializeFeedback() {
         const feedbackButtonsContainer = document.getElementById('feedback-buttons');
         const feedbackMessagePlaceholder = document.getElementById('feedback-message-placeholder');
@@ -157,15 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const responseValue = button.dataset.response;
             if (!responseValue) return;
     
-            // Disable buttons after click
-            feedbackButtonsContainer.querySelectorAll('.feedback-btn').forEach(btn => btn.disabled = true);
-    
-            // Show temporary message while sending
-            feedbackMessagePlaceholder.textContent = 'Submitting feedback...';
-            feedbackMessagePlaceholder.style.fontWeight = 'bold';
-            feedbackMessagePlaceholder.style.color = '#4a5568';
-            feedbackMessagePlaceholder.style.marginLeft = '10px';
-    
             try {
                 const res = await fetch('https://marketmind-ai-api.onrender.com/api/feedback', {
                     method: 'POST',
@@ -173,20 +149,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify({ response: responseValue })
                 });
     
+                // Hide the buttons
+                feedbackButtonsContainer.style.display = 'none';
+    
                 if (res.ok) {
                     feedbackMessagePlaceholder.textContent = 'Thank you for your feedback!';
+                    feedbackMessagePlaceholder.style.fontWeight = 'bold';
                     feedbackMessagePlaceholder.style.color = '#22c55e'; // green
                 } else {
                     const data = await res.json();
                     feedbackMessagePlaceholder.textContent = `Error: ${data.detail || res.statusText}`;
+                    feedbackMessagePlaceholder.style.fontWeight = 'bold';
                     feedbackMessagePlaceholder.style.color = '#ef4444'; // red
                 }
             } catch (err) {
+                feedbackButtonsContainer.style.display = 'none';
                 feedbackMessagePlaceholder.textContent = `Network error: ${err.message}`;
-                feedbackMessagePlaceholder.style.color = '#ef4444';
+                feedbackMessagePlaceholder.style.fontWeight = 'bold';
+                feedbackMessagePlaceholder.style.color = '#ef4444'; // red
             }
         });
-    }    
+    }       
 
     // Function to update the Telegram button's link for mobile users
     function updateTelegramLink() {
