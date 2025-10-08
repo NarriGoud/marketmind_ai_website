@@ -201,10 +201,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, stepTime);
     }
 
-    document.getElementById('see-how-btn').addEventListener('click', function() {
-        // Navigate to docs.html
-        window.location.href = 'docs.html';
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+        const seeHowBtn = document.getElementById('see-how-btn');
+    
+        if (seeHowBtn) {
+            seeHowBtn.addEventListener('click', () => {
+                // Navigate to docs.html
+                window.location.href = 'docs.html';
+            });
+        } else {
+            console.log('see-how-btn not found on this page.');
+        }
+    });    
 
     function updateStartInvestingLink() {
         const btn = document.getElementById('start-investing-btn');
@@ -291,11 +299,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .mobile-menu-toggle.active span:nth-child(1) {
                 transform: rotate(-45deg) translate(-5px, 6px);
             }
-            
             .mobile-menu-toggle.active span:nth-child(2) {
                 opacity: 0;
             }
-            
             .mobile-menu-toggle.active span:nth-child(3) {
                 transform: rotate(45deg) translate(-5px, -6px);
             }
