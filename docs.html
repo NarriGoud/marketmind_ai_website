@@ -157,7 +157,13 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
-    <script src="https://marketmind.duckdns.org/static_chatbots/chatbot_template_github.min.js"></script>
+    <script>
+        window.MARKETMIND_CONFIG = {
+          template_id: 'hub_0b46673f',
+          server_url: 'https://marketmind-inference.duckdns.org'
+        };
+    </script>
+    <script src='https://hub.marketmind-hub.workers.dev/loader.js'></script>
     <script src="assets/js/docs.js"></script>
 </body>
 </html>
